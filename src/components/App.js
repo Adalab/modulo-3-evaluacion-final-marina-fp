@@ -1,19 +1,21 @@
+import logo from '../images/logo.png';
+import Filters from './Filters';
+import CharacterList from './CharacterList';
+import CharacterDetail from './CharacterDetail';
+import getDataFromApi from '../services/getDataFromApi';
+
+console.log(getDataFromApi());
+
 function App() {
+  /* const [character, setCharacters] = useState([]);
+  const [name, setName] = useState('');
+  useEffect(()=> {
+    getDataFromApi().then(data => setCharacters(data));
+  }, []); */
+  
   return (
     <div className="App">
-      <header className="App-header">
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      
     </div>
   );
 }
