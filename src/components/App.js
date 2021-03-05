@@ -1,21 +1,35 @@
-import logo from '../images/logo.png';
-import Filters from './Filters';
-import CharacterList from './CharacterList';
-import CharacterDetail from './CharacterDetail';
-import getDataFromApi from '../services/getDataFromApi';
+// Router
+import React, { useEffect, useState } from 'react';
+import { Route, Switch } from "react-router-dom";
 
-console.log(getDataFromApi());
+// Components
+import Header from "./Header";
+import Filters from "./Filters";
+import CharacterList from "./CharacterList";
+//import CharacterDetail from "./CharacterDetail";
+import Footer from "./Footer";
 
-function App() {
-  /* const [character, setCharacters] = useState([]);
-  const [name, setName] = useState('');
-  useEffect(()=> {
+// Services
+import getDataFromApi from "../services/getDataFromApi";
+
+
+const App = () => {
+  const [characters, setCharacters] = useState([]);
+  useEffect(()=>{
     getDataFromApi().then(data => setCharacters(data));
-  }, []); */
+  }, []);
   
   return (
-    <div className="App">
-      
+    <div className='App'>
+
+      <Header />
+      <Switch>
+        <Route>
+          <Filters />
+          <CharacterList characters={characters} />
+          <Footer />
+        </Route>
+      </Switch>
     </div>
   );
 }
