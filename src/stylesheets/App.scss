@@ -1,0 +1,83 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  color: inherit;
+  text-decoration: none;
+}
+
+.home {
+  &__body {
+    background: url(../images/background-image.jpg) no-repeat center / cover
+      fixed;
+    width: 100%;
+    height: 100vh;
+  }
+}
+.header {
+  &__image {
+  }
+}
+.filter {
+  &__form {
+    &--name {
+    }
+    &--label {
+    }
+    &--input {
+    }
+    &--species {
+    }
+  }
+}
+.reset {
+  color: grey;
+}
+.noresult {
+  &__text {
+    color: white;
+  }
+}
+.card {
+  &__list {
+  }
+  &__item {
+  }
+  &__element {
+    &--image {
+    }
+    &--title {
+    }
+    &--species {
+    }
+  }
+}
+.notfound {
+  &__container {
+  }
+  &__title {
+  }
+  &__quote {
+  }
+  &__image {
+  }
+}
+.detail {
+  &__container {
+  }
+  &__arrow {
+  }
+  &__header {
+  }
+  &__image {
+  }
+  &__description {
+    &--element {
+    }
+  }
+}
+.footer {
+  color: aquamarine;
+  background-color: rgb(138, 43, 226);
+}

@@ -9,8 +9,8 @@ const Filters = (props) => {
     e.preventDefault();
   };
   return (
-    <section className='filters'>
-      <form className='filters__form' onSubmit={handleSubmit}>
+    <section className='filter'>
+      <form className='filter__form' onSubmit={handleSubmit}>
         <FilterByName
           handleFilter={props.handleFilter}
           handleReset={props.handleReset}

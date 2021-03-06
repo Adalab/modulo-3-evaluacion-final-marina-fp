@@ -6,11 +6,11 @@ const FilterBySpecies = props =>{
       });
     }
     return (
-        <div className="form__species" >
-        <label className="form__label" htmlFor="species">
+        <div className="filter__form--species" >
+        <label className="filter__form--label" htmlFor="species">
         Species:
         </label>
-        <select className="form__input--select" name="species" id="species" onChange={handleChange}>
+        <select className="filter__form--input" name="species" id="species" onChange={handleChange}>
           <option value="all">All</option>
           <option value="Alien">Alien</option>
           <option value="Human">Human</option>

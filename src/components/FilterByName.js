@@ -7,11 +7,11 @@ const FilterByName = props =>{
       });
     }
     return (
-        <div className="form__name" >
-        <label className="form__label" htmlFor="name" placeholder="Search">
-          Show me what you got:
+        <div className="filter__form--name" >
+        <label className="filter__form--label" htmlFor="name" placeholder="Search">
+          Show me what you got!
         </label>
-        <input className="form__input" type="text" name="name" id="name" onChange={handleChange}/>
+        <input className="filter__form--input" type="text" name="name" id="name" onChange={handleChange}/>
         </div>
     )
   }

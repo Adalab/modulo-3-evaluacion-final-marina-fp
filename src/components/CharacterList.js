@@ -10,14 +10,14 @@ const CharacterList = (props) => {
   } else {
     const cElements = props.characters.map((character) => {
       return (
-        <li className='card' key={character.id}>
+        <li className='card__item' key={character.id}>
           <CharacterCard character={character} />
         </li>
       );
     });
     return (
       <section>
-        <ul className='cards'>{cElements}</ul>
+        <ul className='card__list'>{cElements}</ul>
       </section>
     );
   }
