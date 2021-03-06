@@ -1,14 +1,29 @@
-import FilterByName from './FilterByName';
-import FilterBySpecies from './FilterBySpecies';
+import FilterByName from "./FilterByName";
+import FilterBySpecies from "./FilterBySpecies";
 
-const Filters = props =>{
+const Filters = (props) => {
+  const handleReset = () => {
+    props.handleReset();
+  };
+  const handleSubmit = (e) => {
+    e.preventDefault();
+  };
   return (
-    <section>
-    <form>
-      <FilterByName handleFilter = {props.handleFilter}/>
-      <FilterBySpecies handleFilter = {props.handleFilter}/>
-    </form>
-  </section>
-  )
-}
-export default Filters
+    <section className='filters'>
+      <form className='filters__form' onSubmit={handleSubmit}>
+        <FilterByName
+          handleFilter={props.handleFilter}
+          handleReset={props.handleReset}
+        />
+        <FilterBySpecies
+          handleFilter={props.handleFilter}
+          handleReset={props.handleReset}
+        />
+      </form>
+      <span onClick={handleReset} className='reset'>
+        Reset
+      </span>
+    </section>
+  );
+};
+export default Filters;

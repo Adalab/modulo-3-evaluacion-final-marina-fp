@@ -6,9 +6,9 @@ const FilterByName = (props) => {
     });
 
     return (
-      <>
-        <label className='form__label' htmlFor='name'>
-          Filtrar por nombre:
+        <>
+        <label className="form__label display-block" htmlFor="name" placeholder="Search">
+          Show me what you got:
         </label>
         <input
           className='form__input'
