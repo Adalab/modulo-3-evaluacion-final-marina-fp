@@ -4,10 +4,10 @@ const CharacterDetail = (props) => {
     return (
       <>
         <header>
-          <h2 className='detail__title'>Personaje no encontrado</h2>
           <Link to='/'>
-            <span className=''>Icono</span>
+            <span className=''>Volver</span>
           </Link>
+          <h2 className='detail__title'>Personaje no encontrado</h2>
         </header>
         <section>
           <img className='' src='' alt='' />
@@ -18,10 +18,10 @@ const CharacterDetail = (props) => {
     return (
       <div>
         <header>
-          <h2 className='detail__title'>{props.selectedCharacter.name}</h2>
           <Link to='/'>
-            <span className=''>Icono</span>
+            <span className=''>Volver</span>
           </Link>
+          <h2 className='detail__title'>{props.selectedCharacter.name}</h2>
         </header>
         <section>
           <img
@@ -34,7 +34,7 @@ const CharacterDetail = (props) => {
             <li>Planeta de origen: {props.selectedCharacter.origin.name}</li>
             <li>Localización: {props.selectedCharacter.location.name}</li>
             <li>Estado: {props.selectedCharacter.status}</li>
-            {/* <li>Episodios: {props.selectedCharacter.episode}</li> */}
+            <li>Episodios: {props.selectedCharacter.episodes}</li>
           </ul>
         </section>
       </div>

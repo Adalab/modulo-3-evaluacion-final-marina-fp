@@ -8,7 +8,7 @@ const FilterByName = props =>{
     }
     return (
         <>
-        <label className="form__label display-block" htmlFor="name">
+        <label className="form__label display-block" htmlFor="name" placeholder="Search">
           Show me what you got:
         </label>
         <input className="form__input-text" type="text" name="name" id="name" onChange={handleChange}/>

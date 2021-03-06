@@ -44,7 +44,7 @@ const renderLanding = props =>{
   return (
     <>
     <Header />
-      <Filters handleFilter = {handleFilter} />
+      <Filters handleFilter = {handleFilter} handleReset = {handleReset}/>
       <CharacterList characters = {filterCharacters} />
       <Footer />
     </>
