@@ -12,8 +12,8 @@ const FilterBySpecies = props =>{
         </label>
         <select className="form__input--select" name="species" id="species" onChange={handleChange}>
           <option value="all">Todos</option>
-          <option value="human">Humano</option>
-          <option value="alien">Alien</option>
+          <option value="Human">Humano</option>
+          <option value="Alien">Alien</option>
         </select>
      </>
     )

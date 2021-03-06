@@ -20,8 +20,9 @@ const App = () => {
   useEffect(()=>{
     getDataFromApi().then(data => setCharacters(data));
   }, []);
-  
+  console.log(getDataFromApi())
   const handleFilter = (inputChange) =>{
+    console.log(inputChange);
     
     if(inputChange.key ==='name'){
       setName(inputChange.value);
@@ -31,8 +32,9 @@ const App = () => {
     }       
   }
 
-  const filterCharacters = characters.filter(character => {return character.name.toUpperCase().includes(name.toUpperCase())}).filter(character =>{
-      return species ==='all'? true: character.species === species
+  const filterCharacters = characters.filter(character => {return character.name.toUpperCase().includes(name.toUpperCase())
+  }).filter(character =>{
+    return species ==='all'? true: character.species === species
 });
 
   return (
