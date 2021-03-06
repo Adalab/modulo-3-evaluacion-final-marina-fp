@@ -1,17 +1,17 @@
-// Router
+// React
 import React, { useEffect, useState } from 'react';
 import { Route, Switch } from "react-router-dom";
+import PropTypes from 'prop-types';
 
 // Components
 import Header from "./Header";
 import Filters from "./Filters";
 import CharacterList from "./CharacterList";
-//import CharacterDetail from "./CharacterDetail";
+import CharacterDetail from "./CharacterDetail";
 import Footer from "./Footer";
 
 // Services
 import getDataFromApi from "../services/getDataFromApi";
-
 
 const App = () => {
   const [characters, setCharacters] = useState([]);
@@ -20,10 +20,8 @@ const App = () => {
   useEffect(()=>{
     getDataFromApi().then(data => setCharacters(data));
   }, []);
-  console.log(getDataFromApi())
+
   const handleFilter = (inputChange) =>{
-    console.log(inputChange);
-    
     if(inputChange.key ==='name'){
       setName(inputChange.value);
     }
@@ -36,17 +34,26 @@ const App = () => {
   }).filter(character =>{
     return species ==='all'? true: character.species === species
 });
+const renderDetail = props =>{
+  const id = props.character.id;
+  const selectCharacter = characters.find( character =>{
+    return character.id === id;
+  })
+  return <CharacterDetail character ={selectCharacter} />
+}
 
   return (
     <div className='App'>
 
       <Header />
-      <Switch>
+      
         <Route>
           <Filters handleFilter = {handleFilter} />
           <CharacterList characters = {filterCharacters} />
           <Footer />
         </Route>
+        <Switch>
+          <Route path='/character/:id' render={renderDetail} />
       </Switch>
     </div>
   );
