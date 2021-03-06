@@ -3,8 +3,8 @@ import FilterBySpecies from './FilterBySpecies';
 
 const Filters = props =>{
   return (
-    <section>
-    <form>
+    <section className="filters">
+    <form className="filters__form" >
       <FilterByName handleFilter = {props.handleFilter} />
       <FilterBySpecies handleFilter = {props.handleFilter} />
     </form>

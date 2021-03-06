@@ -1,35 +1,44 @@
 import { Link } from "react-router-dom";
 const CharacterDetail = (props) => {
-    if(props.character === undefined) {
-        <>
+  if (props.selectedCharacter === undefined) {
+    return (
+      <>
         <header>
-            <h2 className='card__title'>Personaje no encontrado</h2>
-            <Link to='/'>
-            <span className=''></span>
-            </Link>
+          <h2 className='detail__title'>Personaje no encontrado</h2>
+          <Link to='/'>
+            <span className=''>Icono</span>
+          </Link>
         </header>
-        </>
-    }
-    else {
-        return (
-  <>
-    <header>
-      <h2 className='card__title'>{props.character.name}</h2>
-        <Link to='/'>
-          <span className=''></span>
-        </Link>
-    </header>
-    <section>
-      <img className='card__img' src={props.character.image} alt={`Foto de ${props.character.name}`} />
-      <ul className='card__description'>
-        <li>Especie:{props.character.species}</li>
-        <li>Planeta de origen: {props.character.origin.name}</li>
-        <li>Localización: {props.character.location.name}</li>
-        <li>Estado: {props.character.status}</li>
-        {/* <li>Episodios: {props.character.episode}</li> */}
-      </ul>
-    </section>
-  </>
-  )}
+        <section>
+          <img className='' src='' alt='' />
+        </section>
+      </>
+    );
+  } else {
+    return (
+      <div>
+        <header>
+          <h2 className='detail__title'>{props.selectedCharacter.name}</h2>
+          <Link to='/'>
+            <span className=''>Icono</span>
+          </Link>
+        </header>
+        <section>
+          <img
+            className='detail__img'
+            src={props.selectedCharacter.image}
+            alt={`Foto de ${props.selectedCharacter.name}`}
+          />
+          <ul className='detail__description'>
+            <li>Especie:{props.selectedCharacter.species}</li>
+            <li>Planeta de origen: {props.selectedCharacter.origin.name}</li>
+            <li>Localización: {props.selectedCharacter.location.name}</li>
+            <li>Estado: {props.selectedCharacter.status}</li>
+            {/* <li>Episodios: {props.selectedCharacter.episode}</li> */}
+          </ul>
+        </section>
+      </div>
+    );
+  }
 };
 export default CharacterDetail;

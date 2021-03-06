@@ -1,4 +1,5 @@
 import CharacterCard from './CharacterCard';
+import PropTypes from 'prop-types';
 
 const CharacterList = props =>{
 
@@ -12,5 +13,7 @@ const CharacterList = props =>{
       </ul>
     </section>
   )
-}
+};
+
+CharacterList.propTypes = { character: PropTypes.object };
 export default CharacterList;

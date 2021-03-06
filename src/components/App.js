@@ -1,7 +1,7 @@
 // React
 import React, { useEffect, useState } from 'react';
 import { Route, Switch } from "react-router-dom";
-import PropTypes from 'prop-types';
+//import PropTypes from 'prop-types';
 
 // Components
 import Header from "./Header";
@@ -17,6 +17,7 @@ const App = () => {
   const [characters, setCharacters] = useState([]);
   const [name, setName] = useState('');
   const [species, setSpecies] = useState('all');
+
   useEffect(()=>{
     getDataFromApi().then(data => setCharacters(data));
   }, []);
@@ -29,34 +30,43 @@ const App = () => {
       setSpecies(inputChange.value);
     }       
   }
+const handleReset = () => {
+  setName('');
+  setSpecies('all');
+};
 
-  const filterCharacters = characters.filter(character => {return character.name.toUpperCase().includes(name.toUpperCase())
+const filterCharacters = characters.filter(character => {return character.name.toUpperCase().includes(name.toUpperCase())
   }).filter(character =>{
     return species ==='all'? true: character.species === species
 });
+
+const renderLanding = props =>{
+  return (
+    <>
+    <Header />
+      <Filters handleFilter = {handleFilter} />
+      <CharacterList characters = {filterCharacters} />
+      <Footer />
+    </>
+  )
+}
 const renderDetail = props =>{
-  const id = props.character.id;
-  const selectCharacter = characters.find( character =>{
+  const id = parseInt(props.match.params.id);
+
+  const selectedCharacter = characters.find( character =>{
     return character.id === id;
-  })
-  return <CharacterDetail character ={selectCharacter} />
+  });
+  return <CharacterDetail selectedCharacter ={selectedCharacter} />
 }
 
   return (
     <div className='App'>
-
-      <Header />
-      
-        <Route>
-          <Filters handleFilter = {handleFilter} />
-          <CharacterList characters = {filterCharacters} />
-          <Footer />
-        </Route>
-        <Switch>
+      <Switch>
+          <Route exact path='/' render={renderLanding} />
           <Route path='/character/:id' render={renderDetail} />
       </Switch>
     </div>
   );
 }
 
-export default App;
+export default App
