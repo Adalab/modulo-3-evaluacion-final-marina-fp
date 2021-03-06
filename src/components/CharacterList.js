@@ -23,5 +23,4 @@ const CharacterList = (props) => {
   }
 };
 
-//CharacterList.propTypes = { character: PropTypes.object };
 export default CharacterList;

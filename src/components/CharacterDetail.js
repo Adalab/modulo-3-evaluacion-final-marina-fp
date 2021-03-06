@@ -5,9 +5,9 @@ const CharacterDetail = (props) => {
       <>
         <header>
           <Link to='/'>
-            <span className=''>Volver</span>
+            <span className=''>Back</span>
           </Link>
-          <h2 className='detail__title'>Personaje no encontrado</h2>
+          <h2 className='detail__title'>Character not found</h2>
         </header>
         <section>
           <img className='' src='' alt='' />
@@ -19,7 +19,7 @@ const CharacterDetail = (props) => {
       <div>
         <header>
           <Link to='/'>
-            <span className=''>Volver</span>
+            <span className=''>Back</span>
           </Link>
           <h2 className='detail__title'>{props.selectedCharacter.name}</h2>
         </header>
@@ -30,9 +30,9 @@ const CharacterDetail = (props) => {
             alt={`Foto de ${props.selectedCharacter.name}`}
           />
           <ul className='detail__description'>
-            <li>Especie:{props.selectedCharacter.species}</li>
-            <li>Planeta de origen: {props.selectedCharacter.origin.name}</li>
-            <li>Localización: {props.selectedCharacter.location.name}</li>
+            <li>Species:{props.selectedCharacter.species}</li>
+            <li>Origin planet: {props.selectedCharacter.origin}</li>
+            <li>Localización: {props.selectedCharacter.location}</li>
             <li>Estado: {props.selectedCharacter.status}</li>
             <li>Episodios: {props.selectedCharacter.episodes}</li>
           </ul>
