@@ -1,18 +1,23 @@
 const FilterByName = (props) => {
   const handleChange = (e) => {
-      props.handleFilter({
+    props.handleFilter({
       key: "name",
       value: e.target.value,
     });
 
     return (
-      <input
-        className='form__input'
-        type='text'
-        name='name'
-        id='name'
-        onChange={handleChange}
-      />
+      <>
+        <label className='form__label' htmlFor='name'>
+          Filtrar por nombre:
+        </label>
+        <input
+          className='form__input'
+          type='text'
+          name='name'
+          id='name'
+          onChange={handleChange}
+        />
+      </>
     );
   };
 };
