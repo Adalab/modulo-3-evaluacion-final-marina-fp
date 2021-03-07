@@ -4,7 +4,7 @@ import logo from "../images/logo.png";
 const Header = () => {
   return (
     <div className='header'>
-      <img className='header__img' src={logo} alt='' />
+      <img className='header__image' src={logo} alt='Rick and Morty logo' />
     </div>
   );
 };

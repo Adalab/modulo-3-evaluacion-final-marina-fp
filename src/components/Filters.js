@@ -10,6 +10,7 @@ const Filters = (props) => {
   };
   return (
     <section className='filter'>
+      <h3 className="filter__quote">Let's Get Schwifty!</h3>
       <form className='filter__form' onSubmit={handleSubmit}>
         <FilterByName
           handleFilter={props.handleFilter}
@@ -19,10 +20,11 @@ const Filters = (props) => {
           handleFilter={props.handleFilter}
           handleReset={props.handleReset}
         />
-      </form>
-      <span onClick={handleReset} className='reset'>
-        Reset
+        <span onClick={handleReset} className='reset'>
+        <i class="fas fa-trash-alt"></i>
       </span>
+      </form>
+      
     </section>
   );
 };

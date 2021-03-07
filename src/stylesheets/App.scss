@@ -16,23 +16,39 @@
   }
 }
 .header {
+    display: flex;
+    justify-content: center;
   &__image {
+    width: 450px;
+    margin-top: 30px;
   }
 }
 .filter {
+    background-color: rgba(149, 6, 231, 0.3);
+    height: 70px;
+    padding: 10px;
+  &__quote {
+   color: rgb(131, 226, 43)
+  }
   &__form {
+      display: flex;
+      flex-direction: row;
     &--name {
+        margin-right: 10px;
     }
     &--label {
+        color: rgb(131, 226, 43)
     }
     &--input {
+        border-radius: 15px;
+        border: rgb(131, 226, 43) solid
     }
     &--species {
     }
   }
 }
 .reset {
-  color: grey;
+  color: lightgrey;
 }
 .noresult {
   &__text {
@@ -41,11 +57,18 @@
 }
 .card {
   &__list {
+      margin:  100px;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   }
   &__item {
+      width: 200px;
+      margin:20px;
   }
   &__element {
+      
     &--image {
+        width: 150px;
     }
     &--title {
     }

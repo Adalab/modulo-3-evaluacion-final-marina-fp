@@ -47,12 +47,12 @@ const App = () => {
 
   const renderLanding = (props) => {
     return (
-      <body className="home__body">
+      <div className="home__body">
         <Header />
         <Filters handleFilter={handleFilter} handleReset={handleReset} />
         <CharacterList characters={filterCharacters} />
         <Footer />
-      </body>
+      </div>
     );
   };
   const renderDetail = (props) => {

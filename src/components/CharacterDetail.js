@@ -5,7 +5,7 @@ const CharacterDetail = (props) => {
   if (props.selectedCharacter === undefined) {
     return (
       <>
-        <body className='notfound'>
+        <div className='notfound'>
           <div className='notfound__container'>
             <Link to='/'>
               <span className=''>Back</span>
@@ -17,12 +17,12 @@ const CharacterDetail = (props) => {
             <img className='notfound__image' src='' alt='' />
           </div>
           <Footer />
-        </body>
+        </div>
       </>
     );
   } else {
     return (
-      <body className='detail'>
+      <div className='detail'>
         <section className='detail__container'>
           <Link to='/'>
             <span className='detail__arrow'>Back</span>
@@ -44,7 +44,7 @@ const CharacterDetail = (props) => {
           </ul>
         </section>
         <Footer />
-      </body>
+      </div>
     );
   }
 };
