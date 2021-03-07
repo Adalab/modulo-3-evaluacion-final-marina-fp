@@ -1,5 +1,6 @@
 import FilterByName from "./FilterByName";
 import FilterBySpecies from "./FilterBySpecies";
+import "../stylesheets/Filters.scss";
 
 const Filters = (props) => {
   const handleReset = () => {
@@ -10,7 +11,7 @@ const Filters = (props) => {
   };
   return (
     <section className='filter'>
-      <h3 className="filter__quote">Let's Get Schwifty!</h3>
+      <h3 className='filter__quote'>Let's Get Schwifty!</h3>
       <form className='filter__form' onSubmit={handleSubmit}>
         <FilterByName
           handleFilter={props.handleFilter}
@@ -21,10 +22,9 @@ const Filters = (props) => {
           handleReset={props.handleReset}
         />
         <span onClick={handleReset} className='reset'>
-        <i className='fas fa-trash-alt'></i>
-      </span>
+          <i className='fas fa-trash-alt'></i>
+        </span>
       </form>
-      
     </section>
   );
 };

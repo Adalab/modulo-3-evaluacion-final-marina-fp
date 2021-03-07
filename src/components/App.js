@@ -14,7 +14,7 @@ import Footer from "./Footer";
 import getDataFromApi from "../services/getDataFromApi";
 
 //Styles
-import '../stylesheets/App.scss';
+import "../stylesheets/App.scss";
 
 const App = () => {
   const [characters, setCharacters] = useState([]);
@@ -47,7 +47,7 @@ const App = () => {
 
   const renderLanding = (props) => {
     return (
-      <div className="home__body">
+      <div className='home__body'>
         <Header />
         <Filters handleFilter={handleFilter} handleReset={handleReset} />
         <CharacterList characters={filterCharacters} />
@@ -65,12 +65,12 @@ const App = () => {
   };
 
   return (
-    <div className='App'>
+    <body className='App'>
       <Switch>
         <Route exact path='/' render={renderLanding} />
         <Route path='/character/:id' render={renderDetail} />
       </Switch>
-    </div>
+    </body>
   );
 };
 
