@@ -4,6 +4,15 @@ import "../stylesheets/CharacterDetail.scss";
 import notfound from "../images/notfound.jpg";
 
 const CharacterDetail = (props) => {
+  const statusIcon =() => {
+    if (props.selectedCharacter.status === 'Dead') {
+        return '☠️';
+    } else if (props.selectedCharacter.status === 'Alive') {
+        return '❤️';
+    } else if (props.selectedCharacter.status === 'unknown')
+        return '❓';
+};
+  
   if (props.selectedCharacter === undefined) {
     return (
       <>
@@ -25,6 +34,7 @@ const CharacterDetail = (props) => {
       </>
     );
   } else {
+    
     return (
       <div className='detail'>
         <Link to='/'>
@@ -47,13 +57,13 @@ const CharacterDetail = (props) => {
               Origin planet: {props.selectedCharacter.origin}
             </li>
             <li className='detail__description--element'>
-              Localización: {props.selectedCharacter.location}
+              Location: {props.selectedCharacter.location}
             </li>
             <li className='detail__description--element'>
-              Estado: {props.selectedCharacter.status}
+              Status: {props.selectedCharacter.status} {statusIcon()}
             </li>
             <li className='detail__description--element'>
-              Episodios: {props.selectedCharacter.episodes}
+              Episodes: {props.selectedCharacter.episodes}
             </li>
           </ul>
         </section>
