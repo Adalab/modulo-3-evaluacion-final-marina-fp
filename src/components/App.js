@@ -50,7 +50,7 @@ const App = () => {
     return (
       <div className='home__body'>
         <Header />
-        <Filters handleFilter={handleFilter} handleReset={handleReset} />
+        <Filters handleFilter={handleFilter} handleReset={handleReset} name={name} species={species}/>
         <CharacterList characters={filterCharacters} />
         <Footer />
       </div>
