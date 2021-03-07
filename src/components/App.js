@@ -43,7 +43,8 @@ const App = () => {
     })
     .filter((character) => {
       return species === "all" ? true : character.species === species;
-    });
+    })
+    .sort((a, z) => a.name.localeCompare(z.name));;
 
   const renderLanding = (props) => {
     return (
