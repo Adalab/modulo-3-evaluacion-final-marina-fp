@@ -21,7 +21,7 @@ const Filters = (props) => {
           handleReset={props.handleReset}
         />
         <span onClick={handleReset} className='reset'>
-        <i class="fas fa-trash-alt"></i>
+        <i className='fas fa-trash-alt'></i>
       </span>
       </form>
       
