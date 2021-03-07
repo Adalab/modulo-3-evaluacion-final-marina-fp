@@ -1,0 +1,53 @@
+@import "./reset.scss";
+@import "./variables.scss";
+
+.filter {
+  background-color: rgba(125, 6, 194, 0.3);
+  height: 120px;
+  padding: 10px;
+  &__quote {
+    display: flex;
+    justify-content: center;
+    color: $limegreen;
+    font-family: $fontLora;
+    font-size: 24px;
+    margin-top: 10px;
+  }
+  &__form {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 15px;
+    &--name {
+      margin-right: 10px;
+      font-family: $fontGothic;
+      font-size: 20px;
+    }
+    &--label {
+      color: $limegreen;
+      margin-right: 10px;
+    }
+    &--input {
+      height: 22px;
+      border-radius: 15px;
+      border: $limegreen solid;
+      margin-right: 10px;
+      font-family: $fontLora;
+      padding-left: 5px;
+      color: $blue;
+      &:focus {
+        outline: none;
+      }
+    }
+    &--species {
+      margin-right: 10px;
+      font-family: $fontGothic;
+      font-size: 20px;
+    }
+  }
+}
+.reset {
+  color: lightgrey;
+  padding-top: 9px;
+  cursor: pointer;
+}

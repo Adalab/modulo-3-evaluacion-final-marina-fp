@@ -1,27 +1,29 @@
 import CharacterCard from "./CharacterCard";
+import "../stylesheets/CharacterList.scss";
 
 const CharacterList = (props) => {
   if (props.characters.length === 0) {
     return (
       <section className='noresult'>
-        <h2 className="noresult__text" >Your search doesn't match any of the characters</h2>
+        <h2 className='noresult__text'>
+          Your search doesn't match any of the available characters
+        </h2>
       </section>
     );
   } else {
     const cElements = props.characters.map((character) => {
       return (
-        <li className='card' key={character.id}>
+        <li className='card__item' key={character.id}>
           <CharacterCard character={character} />
         </li>
       );
     });
     return (
       <section>
-        <ul className='cards'>{cElements}</ul>
+        <ul className='card__list'>{cElements}</ul>
       </section>
     );
   }
 };
 
-//CharacterList.propTypes = { character: PropTypes.object };
 export default CharacterList;

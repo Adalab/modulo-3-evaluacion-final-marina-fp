@@ -1,10 +1,10 @@
 import logo from "../images/logo.png";
-// import '../stylesheets/Header.scss';
+import "../stylesheets/Header.scss";
 
 const Header = () => {
   return (
     <div className='header'>
-      <img className='header__img' src={logo} alt='' />
+      <img className='header__image' src={logo} alt='Rick and Morty logo' />
     </div>
   );
 };
