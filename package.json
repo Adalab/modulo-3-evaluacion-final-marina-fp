@@ -17,6 +17,9 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "docs": "react-scripts build && rm -rf docs/ && mv build/ docs/",
+    "push": "git add docs/* && git commit -m \"Update github pages\" && git push",
+    "docs-and-push": "npm run docs && npm run push",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
